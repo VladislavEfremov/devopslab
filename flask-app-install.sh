@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt update
 git clone https://github.com/greyli/todoism.git
 cd todoism/
