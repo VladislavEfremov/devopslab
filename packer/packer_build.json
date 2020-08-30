@@ -1,0 +1,23 @@
+{
+	"builders": [
+		{
+		"type": "googlecompute",
+		"project_id": "abiding-lead-270514",
+		"image_name": "http-server-{{timestamp}}",
+		"source_image": "ubuntu-2004-focal-v20200810",
+		"zone": "europe-west1-b",
+		"ssh_username": "application",
+		"machine_type": "f1-micro"
+		}
+	],
+	"provisioners": [
+		{
+		"type": "shell",
+		"script": "scripts/apache_install.sh"
+		},
+		{
+		"type": "shell",
+		"script": "scripts/test_page_deployment.sh"
+		}
+		]
+}
